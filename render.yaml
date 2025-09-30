@@ -10,13 +10,12 @@ services:
       - key: JAVA_VERSION
         value: 17
 
-  # Frontend service (Vite + React)
-  - type: web
+  # Frontend service (Vite + React) - production
+  - type: static
     name: roadmap-frontend
-    env: node
     rootDir: roadmap-frontend
     buildCommand: npm install && npm run build
-    startCommand: npm run preview
+    staticPublishPath: dist
     envVars:
       - key: NODE_VERSION
         value: 22
